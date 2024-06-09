@@ -56,7 +56,6 @@ public class AmazonCrawler {
     */
     static List<WebElement> parseMenu(WebDriver driver) {
         WebElement menuContent = driver.findElement(By.cssSelector("#hmenu-content > ul.hmenu.hmenu-visible"));
-        System.out.println(menuContent.getText());
 
         List<WebElement> items = menuContent.findElements(By.tagName("li"));
 
@@ -99,7 +98,6 @@ public class AmazonCrawler {
         Dictionary<String, Dictionary> fullDict= new Hashtable<>();
         for (WebElement item : items) {
             // go forward
-            System.out.println("Dig for the category: " + item.getText());
             String mainCategory = item.getText();
             item.click();
             Thread.sleep(500);
@@ -163,9 +161,7 @@ public class AmazonCrawler {
                     status = "OK";
                 } catch (Exception e) {}
 
-                // System.out.println(url + ",  " + fullCategory + ", " + status);
                 writer.write(url + ",  " + fullCategory + ", " + status + '\n');
-
             }
         }
         writer.close();
@@ -193,7 +189,6 @@ public class AmazonCrawler {
             WebDriver driver = CommonLibs.setupTest();
             CommonLibs.HandleBotCheck(driver, CommonLibs.getStartUrl());
 
-            System.out.println("Go to the main page");
             driver.get(CommonLibs.getStartUrl());
             CommonLibs.waitForPageLoad(driver);
 

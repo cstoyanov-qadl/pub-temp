@@ -52,7 +52,7 @@ public class ApiTest {
             result.add(objJson.get("userId").toString());
 
             // scenario 2: display the unique ID of each blogpost
-            System.out.println(objJson.get("id"));
+            System.out.println("- id of the blogpost: " + objJson.get("id"));
         }
 
         // scenario 1: display (user, number of blogposts)
