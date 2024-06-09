@@ -20,8 +20,7 @@ public class CommonLibs {
     }
     
     static void teardownTest(WebDriver driver) {
-        //driver.quit();
-        System.out.println("deactivated teardown");
+        driver.quit();
     }
 
     static WebDriver setupTest() {
