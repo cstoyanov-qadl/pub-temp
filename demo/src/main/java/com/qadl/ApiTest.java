@@ -64,6 +64,12 @@ public class ApiTest {
     }
 
     public static void main(String[] args) throws Exception {
-        process(get("https://jsonplaceholder.typicode.com/posts"));
+        try {
+            process(get("https://jsonplaceholder.typicode.com/posts"));
+        } catch (Exception e) {
+            // TODO: detailled exit policy = f(exception)
+            System.exit(1);
+        }
+        System.exit(0);
     }
 }
