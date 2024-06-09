@@ -25,17 +25,13 @@ public class CommonLibs {
     }
 
     static WebDriver setupTest() {
-        System.out.println("Configure the webbrowser");
         System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
 
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("useAutomationExtension", false);
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.addArguments("start-maximized");
-        //options.addArguments("--headless=new");
 
-
-        System.out.println("Start the webbrowser");
         WebDriver driver = new ChromeDriver(options);
 
         return driver;
@@ -57,7 +53,6 @@ public class CommonLibs {
         driver.get(url);
         String first_try = driver.getPageSource();
         while (first_try.contains(botMessage)) {
-            System.out.println("Waiting for completion of the test (or autoforce)");
             driver.get(url);
             first_try = driver.getPageSource();
         }
