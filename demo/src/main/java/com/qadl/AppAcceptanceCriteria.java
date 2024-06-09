@@ -4,7 +4,7 @@ package com.qadl;
  * Hello world!
  *
  */
-public class App 
+public class AppAcceptanceCriteria
 {
     public static void main( String[] args )
     {
